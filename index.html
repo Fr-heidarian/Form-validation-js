@@ -20,13 +20,14 @@
 
 
     <!-- Form -->
-    <form action="" class="m-5 p-5">
+    <div action="" class="m-5 p-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 border p-5">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter your name" >
+                        <div id="name-error"></div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
@@ -52,14 +53,14 @@
                         <textarea class="form-control" id="message" rows="3"
                             placeholder="Enter your message"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="btn-submit">Submit</button>
                 </div>
                 <div class="col-md-8 border p-5">
                 </div>
             </div>
 
         </div>
-    </form>
+    </div>
 
 
 
