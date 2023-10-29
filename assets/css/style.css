@@ -1,11 +1,11 @@
 form{
     border:1px solid darkred;
 }
-.name-error{
+.error{
     padding: 0.25rem 1rem;
-    border: 1px solid #90222d;
+    border: 1px solid #99414a;
     background-color: #fdd2d7;
-    color: #58151c ;
-    border-radius: 7px;
+    color: #a32a36 ;
+    border-radius: 5px;
     margin: 7px;
 }
