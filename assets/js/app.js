@@ -5,7 +5,7 @@
 // function submitForm(){
 //     console.log(document.querySelector("#btn-submit")) ;
 //     console.log("fffffffffffffff");
-// }
+// } 
 
 document.querySelector("#btn-submit").addEventListener("click", () => {
   const name = document.querySelector("#name");
@@ -40,3 +40,16 @@ document.querySelector("#btn-submit").addEventListener("click", () => {
     document.getElementById("email-error").classList.remove("error");
   }
 });
+
+
+{/* <i class="bi bi-eye"></i>;  */}
+document.querySelector("#icon-password").addEventListener("click",()=>{
+  document.querySelector("#icon-password i").classList.toggle("bi-eye"); //<i class="bi"></i>
+  document.querySelector("#icon-password i").classList.toggle("bi-eye-slash"); //<i class="bi bi-eye-slash"></i>
+
+   let passwordInput = document.querySelector("#password");
+
+    passwordInput.type = (passwordInput.type === "text")
+      ? "password"
+      : "text";
+})
