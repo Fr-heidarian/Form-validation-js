@@ -5,11 +5,12 @@
 // function submitForm(){
 //     console.log(document.querySelector("#btn-submit")) ;
 //     console.log("fffffffffffffff");
-// } 
+// }
 
 document.querySelector("#btn-submit").addEventListener("click", () => {
   const name = document.querySelector("#name");
   const email = document.querySelector("#email");
+  const acceptTerms = document.querySelector("#accept-terms:checked");
 
   const letterOnlyRegex = /^[A-Z]+$/gi;
   // const regEx = new RegExp(/^[A-Z]+$/, "i");
@@ -39,17 +40,32 @@ document.querySelector("#btn-submit").addEventListener("click", () => {
     document.getElementById("email-error").innerHTML = "";
     document.getElementById("email-error").classList.remove("error");
   }
+
+  if (!acceptTerms) {
+    // document.getElementById("checkbox-error").innerHTML = "You must accept all terms";
+    const div = document.createElement("div"); //<div></div>
+    div.className = "error";
+    div.innerText = "You must accept all terms";
+    document.querySelector(".accept-term-box").appendChild(div);
+    
+  } else {
+    if (document.querySelector(".accept-term-box .error")) {
+      document.querySelector(".accept-term-box .error").innerHTML = "";
+      document
+        .querySelector(".accept-term-box .error")
+        .classList.remove("error");
+    }
+  }
 });
 
-
-{/* <i class="bi bi-eye"></i>;  */}
-document.querySelector("#icon-password").addEventListener("click",()=>{
+{
+  /* <i class="bi bi-eye"></i>;  */
+}
+document.querySelector("#icon-password").addEventListener("click", () => {
   document.querySelector("#icon-password i").classList.toggle("bi-eye"); //<i class="bi"></i>
   document.querySelector("#icon-password i").classList.toggle("bi-eye-slash"); //<i class="bi bi-eye-slash"></i>
 
-   let passwordInput = document.querySelector("#password");
+  let passwordInput = document.querySelector("#password");
 
-    passwordInput.type = (passwordInput.type === "text")
-      ? "password"
-      : "text";
-})
+  passwordInput.type = passwordInput.type === "text" ? "password" : "text";
+});
