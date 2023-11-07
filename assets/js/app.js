@@ -33,7 +33,7 @@ document.querySelector("#btn-submit").addEventListener("click", () => {
   if (email.value == "") {
     document.getElementById("email-error").innerHTML = "email is required";
     document.getElementById("email-error").classList.add("error");
-  } else if (email.value.match(emailRegex)) {
+  } else if (!email.value.match(emailRegex)) {
     document.getElementById("email-error").innerHTML = "email is not valid";
     document.getElementById("email-error").classList.add("error");
   } else {
@@ -43,11 +43,12 @@ document.querySelector("#btn-submit").addEventListener("click", () => {
 
   if (!acceptTerms) {
     // document.getElementById("checkbox-error").innerHTML = "You must accept all terms";
-    const div = document.createElement("div"); //<div></div>
-    div.className = "error";
-    div.innerText = "You must accept all terms";
-    document.querySelector(".accept-term-box").appendChild(div);
-    
+    if (!document.querySelector(".accept-term-box .error")) {
+      const div = document.createElement("div"); //<div></div>
+      div.className = "error";
+      div.innerText = "You must accept all terms";
+      document.querySelector(".accept-term-box").appendChild(div);
+    }
   } else {
     if (document.querySelector(".accept-term-box .error")) {
       document.querySelector(".accept-term-box .error").innerHTML = "";
@@ -56,7 +57,32 @@ document.querySelector("#btn-submit").addEventListener("click", () => {
         .classList.remove("error");
     }
   }
-});
+
+  const degree = document.querySelector("input[name='degree']:checked");
+  // console.log(degree.value);
+  if (!degree) {
+    const errorDegree = "<div class='error'>degree is required</div>";
+    document.querySelector(".error-box").innerHTML = errorDegree;
+  }else{
+     document.querySelector(".error-box").innerHTML = "";
+  }
+
+  const skills = document.querySelectorAll("input[name='skill']:checked");
+
+  // let skillsList = [];
+  // skills.forEach((item) => {
+  //    skillsList.push(item.value);
+  // });
+  // console.log(skillsList);
+
+  if (skills.length == 0) {
+    document.getElementById("skill-error").innerHTML = "select a skill";
+    document.getElementById("skill-error").classList.add("error");
+  } else {
+    document.getElementById("skill-error").innerHTML = "";
+    document.getElementById("skill-error").classList.remove("error");
+  }
+}); //end submit
 
 {
   /* <i class="bi bi-eye"></i>;  */
