@@ -1,27 +1,23 @@
-//control event:
-// event handler  onclick="functionName()"
-// event listener  addEventListener("click", submitForm)
-
-// function submitForm(){
-//     console.log(document.querySelector("#btn-submit")) ;
-//     console.log("fffffffffffffff");
-// }
-
-document.querySelector("#btn-submit").addEventListener("click", () => {
+document.querySelector("#signup-form").addEventListener("submit", (e) => {
+  const errors = [];
+  console.log(e);
   const name = document.querySelector("#name");
   const email = document.querySelector("#email");
   const acceptTerms = document.querySelector("#accept-terms:checked");
+  const role = document.querySelector("#role");
 
   const letterOnlyRegex = /^[A-Z]+$/gi;
   // const regEx = new RegExp(/^[A-Z]+$/, "i");
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
   if (name.value == "") {
+    errors.push("name is required");
     document.getElementById("name-error").innerHTML = "name is required";
     document.getElementById("name-error").classList.add("error");
     // document.getElementById("name-error").style.cssText =
     //   "border: 1px solid #58151c !important; padding:0.25rem 1rem !important;";
   } else if (!name.value.match(letterOnlyRegex)) {
+    errors.push("you must use letter only");
     document.getElementById("name-error").innerHTML =
       "you must use letter only";
     document.getElementById("name-error").classList.add("error");
@@ -31,9 +27,11 @@ document.querySelector("#btn-submit").addEventListener("click", () => {
   }
 
   if (email.value == "") {
+    errors.push("email is required");
     document.getElementById("email-error").innerHTML = "email is required";
     document.getElementById("email-error").classList.add("error");
   } else if (!email.value.match(emailRegex)) {
+    e.preventDefault();
     document.getElementById("email-error").innerHTML = "email is not valid";
     document.getElementById("email-error").classList.add("error");
   } else {
@@ -42,6 +40,7 @@ document.querySelector("#btn-submit").addEventListener("click", () => {
   }
 
   if (!acceptTerms) {
+    errors.push("You must accept all terms");
     // document.getElementById("checkbox-error").innerHTML = "You must accept all terms";
     if (!document.querySelector(".accept-term-box .error")) {
       const div = document.createElement("div"); //<div></div>
@@ -61,10 +60,11 @@ document.querySelector("#btn-submit").addEventListener("click", () => {
   const degree = document.querySelector("input[name='degree']:checked");
   // console.log(degree.value);
   if (!degree) {
+    errors.push("degree is required");
     const errorDegree = "<div class='error'>degree is required</div>";
     document.querySelector(".error-box").innerHTML = errorDegree;
-  }else{
-     document.querySelector(".error-box").innerHTML = "";
+  } else {
+    document.querySelector(".error-box").innerHTML = "";
   }
 
   const skills = document.querySelectorAll("input[name='skill']:checked");
@@ -76,11 +76,25 @@ document.querySelector("#btn-submit").addEventListener("click", () => {
   // console.log(skillsList);
 
   if (skills.length == 0) {
+    errors.push("select a skill");
     document.getElementById("skill-error").innerHTML = "select a skill";
     document.getElementById("skill-error").classList.add("error");
   } else {
     document.getElementById("skill-error").innerHTML = "";
     document.getElementById("skill-error").classList.remove("error");
+  }
+
+   if (role.value === "0") {
+     errors.push("Select a Role");
+     document.getElementById("role-error").innerHTML = "Select a Role";
+     document.getElementById("role-error").classList.add("error");
+   } else {
+     document.getElementById("role-error").innerHTML = "";
+     document.getElementById("role-error").classList.remove("error");
+   }
+
+  if (errors.length > 0) {
+    e.preventDefault();
   }
 }); //end submit
 
