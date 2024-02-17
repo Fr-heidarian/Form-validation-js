@@ -1,12 +1,83 @@
-.form-image{
-    background: linear-gradient(to right, rgba(196, 196, 196, 0.2), rgba(114, 114, 114, 0.3)), url("../images/sign-up.jpg") center no-repeat;
-    background-size: cover;
+.form-image {
+  background-image: url("../images/key-lock-password-security-privacy-protection-graphic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 90%;
+  height: 75%;
+  float: right;
 }
-.error{
-    padding: 0.25rem 1rem;
-    border: 1px solid #99414a;
-    background-color: #fdd2d7;
-    color: #a32a36 ;
-    border-radius: 5px;
-    margin: 7px;
-} 
+.error {
+  padding: 0.25rem 1rem;
+  border: 1px solid #99414a;
+  background-color: #fdd2d7;
+  color: #a32a36;
+  border-radius: 5px;
+  margin: 7px;
+}
+/* style */
+
+.container {
+  width: 80%;
+}
+.row {
+  border: 1px dotted darkgoldenrod;
+}
+.form-size-style,
+input::placeholder,
+textarea,
+.form-select {
+  font-size: 0.85rem !important;
+  color: darkblue;
+  font-weight: 400;
+}
+
+textarea:focus,
+.form-control:focus,
+.input-group:focus,
+.form-select:focus {
+  box-shadow: none !important;
+  border: none;
+  border-bottom: 1px solid darkblue;
+  color: darkblue;
+}
+.form-control,
+.form-select,
+.input-group-text {
+  border: none;
+  border-bottom: 1px dotted darkgoldenrod;
+  color: darkgoldenrod;
+}
+.form-check-input {
+  box-shadow: none;
+  border: 1px dotted darkgoldenrod;
+}
+.form-check-input:focus,
+.form-check-input:checked {
+  box-shadow: none;
+  border: 1px dotted darkgoldenrod;
+  background-color: darkgoldenrod;
+}
+.btn-style {
+  position: relative;
+  background-color: darkblue;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.btn-style:hover {
+  background-color: darkblue;
+  color: darkgoldenrod;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+.btn-style::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  right: -12px;
+  width: 80px;
+  height: 40px;
+  border: dotted darkgoldenrod;
+  border-width: 0 2px 2px 0;
+}

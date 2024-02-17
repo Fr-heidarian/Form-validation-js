@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- CDN bootstrap = cloudflare.com -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
@@ -18,11 +18,11 @@
 <body>
 
     <!-- Form -->
-    <div class="m-5 p-5">
+    <div class="mt-1 form-size-style">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 p-0">
-                    <form action="login.html" method="post" class=" border p-5 w-100" id="signup-form">
+                <div class="col-md-5 p-4">
+                    <form action="login.html" method="post" id="signup-form">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
@@ -58,15 +58,15 @@
                         <div class="mb-3 skill-box">
                             <p>Skill :</p>
                             <input class="form-check-input" type="checkbox" value="html" name="skill" id="html">
-                            <label class="form-label" for="accept-terms">
+                            <label class="form-label me-2" for="accept-terms">
                                 html
                             </label>
                             <input class="form-check-input" type="checkbox" value="css" name="skill" id="css">
-                            <label class="form-label" for="accept-terms">
+                            <label class="form-label me-2" for="accept-terms">
                                 css
                             </label>
                             <input class="form-check-input" type="checkbox" value="js" name="skill" id="js">
-                            <label class="form-label" for="accept-terms">
+                            <label class="form-label me-2" for="accept-terms">
                                 js
                             </label>
                             <input class="form-check-input" type="checkbox" value="reactJs" name="skill" id="reactJs">
@@ -81,11 +81,11 @@
                         <div class="degree-box mb-3">
                             <p>Degree :</p>
                             <input class="form-check-input" type="radio" name="degree" value="bachler" id="bachler">
-                            <label class="form-label" for="bachler">
+                            <label class="form-label me-2" for="bachler">
                                 bachler
                             </label>
                             <input class="form-check-input" type="radio" name="degree" value="master" id="master">
-                            <label class="form-label" for="master">
+                            <label class="form-label me-2" for="master">
                                 master </label>
                             <input class="form-check-input" type="radio" name="degree" value="phd" id="phd">
                             <label class="form-label" for="phd">
@@ -109,18 +109,16 @@
                                 I accept all terms
                             </label>
                         </div>
-                        <button type="reset" class="btn btn-primary">clear form</button>
-                        <button type="submit" class="btn btn-primary" id="btn-submit">Submit</button>
+                        <button type="reset" class="btn btn-style text-uppercase me-4">clear form</button>
+                        <button type="submit" class="btn btn-style text-uppercase" id="btn-submit">Submit</button>
                     </form>
-
                 </div>
-                <!-- col8 start -->
-                <div class="col-md-8 p-0">
-                    <div class="form-image h-100 border w-100"></div>
+                <!-- col7 starts -->
+                <div class="col-md-7 p-3">
+                    <div class="form-image"></div>
                 </div>
-                <!-- col8 end -->
+                <!-- col7 ends -->
             </div>
-
         </div>
     </div>
 
